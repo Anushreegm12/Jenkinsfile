@@ -1,0 +1,16 @@
+pipeline {
+  agent any
+  stages {
+    stage ('Clone Repository') {
+      steps {
+        git url:'https://github.com/Anushreegm12/Jenkinsfile.git', branch:'main'
+      }
+    }
+    stage('Run Test') {
+      steps {
+        sh 'python3 file.py'
+      }
+    }
+  }
+}
+    
